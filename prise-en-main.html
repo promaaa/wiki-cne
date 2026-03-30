@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CNE — Guide de prise en main</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="header"><a href="index.html"><img src="logo.png" alt="CNE"><span>Wiki CNE — Documentation Client</span></a></header>
+  <main class="wrap">
+    <div class="grid">
+      <nav class="nav"><button class="nav-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">Navigation</button><div class="nav-links">
+				<a href="index.html">Index</a>
+				<a href="accueil.html">Accueil</a>
+				<a href="vue-ensemble.html">Vue d'ensemble</a>
+				<a href="prestations.html">Prestations</a>
+				<a href="pole.html">Pôles</a>
+				<a href="cpt.html">CPT</a>
+				<a href="equipe.html">Équipe</a>
+				<a href="articles.html">Articles (Substack)</a>
+				<a href="simulateur.html">Simulateur &amp; RDV</a>
+				<a href="slack.html">Slack</a>
+				<a href="google-agenda.html">Google Agenda</a>
+				<a href="linkedin.html">LinkedIn</a>
+				<a href="shortcodes.html">Shortcodes</a>
+				<a href="email.html">Emails</a>
+				<a class="active" href="prise-en-main.html">Guide de prise en main</a>
+				<a href="migration-ovh.html">Migration OVH</a>
+			</div></nav>
+
+      <section class="card">
+        <h1>Guide de prise en main du site</h1>
+        <p>Ce document est la page de référence pour la prise en main de votre site.</p>
+
+        <h2>1) Contenu livré</h2>
+        <ul>
+          <li>Site WordPress complet (thème + plugin + contenus).</li>
+          <li>Configuration serveur (<code>conf/</code>) pour environnement local/technique.</li>
+          <li>Wiki de maintenance et d'exploitation.</li>
+        </ul>
+
+        <h2>2) Configuration client obligatoire</h2>
+        <ol class="checklist">
+          <li>Vérifier les réglages généraux WordPress (site, fuseau, permaliens).</li>
+          <li>Renseigner contact global (email, téléphone, adresse, lien LinkedIn).</li>
+          <li>Configurer Google Agenda dans <code>Réglages → CNE Google Agenda</code>.</li>
+          <li>Configurer Google Analytics 4 dans <strong>Apparence → Personnaliser → CNE - Analytics</strong> (voir §3bis).</li>
+          <li>Valider l'envoi d'emails (idéalement via SMTP transactionnel).</li>
+          <li>Configurer les notifications Slack dans <code>Réglages → CNE Slack</code>.</li>
+          <li>Tester les formulaires Simulateur et RDV de bout en bout.</li>
+        </ol>
+
+        <h2 id="google-analytics">3bis) Configuration Google Analytics 4</h2>
+        <p>Pour activer le suivi Analytics, le client doit :</p>
+        <ol>
+          <li><strong>Créer un compte GA4</strong> sur <a href="https://analytics.google.com" target="_blank" rel="noopener noreferrer">analytics.google.com</a></li>
+          <li><strong>Récupérer le Measurement ID</strong> (format : <code>G-XXXXXXXXXX</code>) dans Admin → Flux de données → Web</li>
+          <li><strong>Configurer dans WordPress</strong> :</li>
+          <ul>
+            <li>Aller dans <strong>Apparence</strong> → <strong>Personnaliser</strong></li>
+            <li>Cliquer sur <strong>"CNE - Analytics"</strong> dans le menu de gauche</li>
+            <li>Coller le Measurement ID dans le champ prévu</li>
+            <li>Cliquer sur <strong>"Publier"</strong></li>
+          </ul>
+        </ol>
+        <div class="info-box">
+          <strong>Astuce :</strong> Laissez le champ vide si vous ne souhaitez pas utiliser Google Analytics. Le code de suivi ne sera pas inséré.
+        </div>
+
+        <h2>3) Checklist recette avant mise en production</h2>
+        <ul class="checklist">
+          <li>Page Accueil / Prestations / Contact / Actualités fonctionnelles.</li>
+          <li>Aucune erreur critique PHP ou JavaScript.</li>
+          <li>Flux LinkedIn affiché correctement.</li>
+          <li>Prise de RDV crée un événement Google et envoie une invitation par email (fichier ICS).</li>
+          <li>Footer, navigation desktop/mobile et liens légaux valides.</li>
+        </ul>
+
+        <h2>4) Procédure de mise en production</h2>
+        <p>Suivre strictement: <a href="migration-ovh.html">Migration OVH</a>.</p>
+
+        <div class="warn"><strong>Sécurité :</strong> ne jamais transmettre les clés privées (Google JSON, SMTP, mots de
+          passe) par email non sécurisé. Utiliser un coffre-fort partagé.</div>
+      </section>
+    </div>
+  </main>
+</body>
+
+</html>
