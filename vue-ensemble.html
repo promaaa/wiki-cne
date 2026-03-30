@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Vue d'ensemble — Architecture du site</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header"><a href="index.html"><img src="logo.png" alt="CNE"><span>Wiki CNE — Documentation Client</span></a></header>
+<main class="wrap"><div class="grid">
+	<nav class="nav"><button class="nav-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">Navigation</button><div class="nav-links">
+		<a href="index.html">Index</a><a href="accueil.html">Accueil</a><a class="active" href="vue-ensemble.html">Vue d'ensemble</a><a href="prestations.html">Prestations</a><a href="pole.html">Pôles</a><a href="cpt.html">CPT</a><a href="equipe.html">Équipe</a><a href="articles.html">Articles (Substack)</a><a href="simulateur.html">Simulateur & RDV</a><a href="slack.html">Slack</a><a href="google-agenda.html">Google Agenda</a><a href="linkedin.html">LinkedIn</a><a href="shortcodes.html">Shortcodes</a><a href="migration-ovh.html">Migration OVH</a>
+	</div></nav>
+
+	<section class="card">
+		<h1>Architecture fonctionnelle et technique</h1>
+		<p>Le site repose sur WordPress avec un thème sur-mesure et un plugin métier CNE.</p>
+
+		<h2>Composants principaux</h2>
+		<table>
+			<tr><th>Composant</th><th>Rôle</th></tr>
+			<tr><td>Thème <code>cne-premium-theme</code></td><td>Design, templates de pages, header/footer, scripts front.</td></tr>
+			<tr><td>Plugin <code>cne-unified-plugin</code></td><td>CPT, shortcodes métier, formulaires, RDV, Google Calendar.</td></tr>
+			<tr><td>WordPress Core + plugins tiers</td><td>CMS, sécurité, éditeur, extensions sociales/SEO/etc.</td></tr>
+		</table>
+
+		<h2>Données métier gérées</h2>
+		<ul>
+			<li><strong>Études</strong> (CPT <code>cne-etudes</code>) avec pôle et témoignage client.</li>
+			<li><strong>Équipe</strong> (CPT <code>equipe</code>) avec URL LinkedIn et pôle.</li>
+			<li><strong>Partenaires</strong> (CPT <code>cne-partner</code>).</li>
+			<li><strong>Demandes de contact</strong> (table DB <code>wp_cne_contacts</code>).</li>
+			<li><strong>Demandes de RDV</strong> (table DB <code>wp_cne_appointments</code> + éventuel ID Google Event).</li>
+		</ul>
+
+		<h2>Flux fonctionnels clés</h2>
+		<ol>
+			<li>Un prospect remplit le simulateur → demande stockée + email admin.</li>
+			<li>Un prospect prend RDV → vérification disponibilité → création agenda + emails de confirmation.</li>
+			<li>Les contenus études/équipe/partenaires sont rendus via shortcodes et templates.</li>
+		</ol>
+
+		<div class="ok">Le site peut fonctionner même sans Google Calendar : un fallback email/ICS est prévu pour les rendez-vous.</div>
+
+		<h2>Points sensibles à surveiller</h2>
+		<ul>
+			<li>Validité des clés Google Calendar (service account + partage calendrier).</li>
+			<li>Délivrabilité email (SPF/DKIM/SMTP).</li>
+			<li>Mises à jour WordPress/plugins (prévoir préproduction).</li>
+			<li>Sauvegardes fichiers + base de données.</li>
+		</ul>
+	</section>
+</div></main>
+</body>
+</html>

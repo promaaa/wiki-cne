@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Migration OVH — Mise en production</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<header class="header"><a href="index.html"><img src="logo.png" alt="CNE"><span>Wiki CNE — Documentation Client</span></a></header>
+	<main class="wrap">
+		<div class="grid">
+			<nav class="nav"><button class="nav-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">Navigation</button><div class="nav-links">
+				<a href="index.html">Index</a><a href="accueil.html">Accueil</a><a href="vue-ensemble.html">Vue
+					d'ensemble</a><a href="prestations.html">Prestations</a><a href="pole.html">Pôles</a><a
+					href="cpt.html">CPT</a><a href="equipe.html">Équipe</a><a href="articles.html">Articles (Substack)</a><a href="simulateur.html">Simulateur &
+					RDV</a><a href="slack.html">Slack</a><a href="google-agenda.html">Google Agenda</a><a
+					href="linkedin.html">LinkedIn</a><a href="shortcodes.html">Shortcodes</a><a class="active" href="migration-ovh.html">Migration OVH</a>
+			</div></nav>
+
+			<section class="card">
+				<h1>Checklist de migration OVH</h1>
+				<p>Procédure recommandée pour passer le site en production sur hébergement OVH sans interruption
+					majeure.</p>
+
+				<h2>Avant migration</h2>
+				<ul class="checklist">
+					<li>Créer une sauvegarde complète: fichiers + base de données.</li>
+					<li>Baisser le TTL DNS (ex: 300s) pour accélérer le switch.</li>
+					<li>Vérifier que le domaine pointe vers l'hébergement cible (A/AAAA/CNAME selon architecture).</li>
+					<li>Préparer les accès: FTP/SFTP, base MySQL, panel OVH, DNS.</li>
+				</ul>
+
+				<h2>Migration technique</h2>
+				<ol class="checklist">
+					<li>Copier les fichiers WordPress sur l'hébergement OVH.</li>
+					<li>Importer la base de données.</li>
+					<li>Adapter <code>wp-config.php</code> (DB_NAME, DB_USER, DB_PASSWORD, DB_HOST).</li>
+					<li>Lancer un remplacement d'URL (ancien domaine → nouveau domaine) si nécessaire.</li>
+					<li>Vérifier les permissions fichiers/dossiers.</li>
+				</ol>
+
+				<h2>Après bascule DNS</h2>
+				<ul class="checklist">
+					<li>Activer HTTPS (certificat SSL Let's Encrypt ou OVH).</li>
+					<li>Vérifier redirection HTTP → HTTPS.</li>
+					<li>Tester toutes les pages clés + formulaires simulateur et RDV.</li>
+					<li>Vérifier envoi email (admin + utilisateur).</li>
+					<li>Purger les caches (plugin/CDN/navigateur).</li>
+				</ul>
+
+				<h2>Supervision post go-live</h2>
+				<ul>
+					<li>Surveiller erreurs PHP et logs serveur.</li>
+					<li>Surveiller demandes de contact/RDV reçues.</li>
+					<li>Contrôler performances (temps de chargement page d'accueil + contact).</li>
+				</ul>
+			</section>
+		</div>
+	</main>
+</body>
+
+</html>

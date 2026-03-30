@@ -1,0 +1,266 @@
+/* Arch Wiki Inspired Style - Sober and Minimalist */
+@import url('https://fonts.googleapis.com/css2?family=Liberation+Sans:wght@400;700&family=DejaVu+Sans+Mono&display=swap');
+
+:root {
+	--bg: #f8f9fa;
+	--content-bg: #ffffff;
+	--text: #202122;
+	--link: #0645ad;
+	--link-hover: #0b2161;
+	--border: #a2a9b1;
+	--heading: #000000;
+	/* Arch Colors */
+	--arch-blue: #0088cc;
+	--arch-dark: #333333;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	background: var(--bg);
+	color: var(--text);
+	font-size: 14px;
+	line-height: 1.6;
+}
+
+a {
+	color: var(--link);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+/* Slimmer Header */
+.header {
+	background: #ffffff;
+	border-bottom: 1px solid var(--border);
+	padding: 10px 20px;
+	display: flex;
+	align-items: center;
+}
+
+.header a {
+	color: var(--arch-blue);
+	font-weight: bold;
+	font-size: 1.1rem;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.header img {
+	height: 24px;
+	width: auto;
+}
+
+.wrap {
+	max-width: 1200px; /* Reduced from 1280 to be more compact */
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: 180px 1fr;
+	gap: 20px;
+}
+
+/* Sidebar Navigation - Simple list */
+.nav {
+	background: transparent;
+	padding: 0;
+}
+
+.nav-links {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+
+.nav a {
+	padding: 4px 0;
+	color: var(--link);
+	font-size: 13px;
+	border: none;
+	border-radius: 0;
+}
+
+.nav a.active {
+	font-weight: bold;
+	color: var(--text);
+	background: transparent;
+}
+
+.nav a:hover {
+	background: transparent;
+	text-decoration: underline;
+}
+
+/* Content Area - Minimalist Card */
+.card {
+	background: var(--content-bg);
+	border: 1px solid var(--border);
+	padding: 30px 40px;
+	box-shadow: none;
+	border-radius: 0; /* Flat look */
+}
+
+h1, h2, h3 {
+	font-family: serif; /* Arch Wiki headings are often serif or sans but very distinct */
+	font-weight: normal;
+	color: var(--heading);
+	margin-top: 0;
+}
+
+/* Overriding to use Sans for that Arch feeling */
+h1, h2, h3 {
+	font-family: sans-serif;
+}
+
+h1 {
+	font-size: 28px;
+	border-bottom: 1px solid var(--border);
+	padding-bottom: 5px;
+	margin-bottom: 20px;
+}
+
+h2 {
+	font-size: 20px;
+	border-bottom: 1px solid #c8ccd1;
+	padding-bottom: 3px;
+	margin-top: 30px;
+	margin-bottom: 15px;
+}
+
+h3 {
+	font-size: 17px;
+	margin-top: 25px;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+
+p, li {
+	margin-bottom: 10px;
+}
+
+ul, ol {
+	padding-left: 25px;
+}
+
+code {
+	background-color: #f8f9fa;
+	border: 1px solid var(--border);
+	color: #202122;
+	padding: 0.1em 0.3em;
+	font-family: monospace;
+	font-size: 13px;
+}
+
+pre {
+	background-color: #f8f9fa;
+	border: 1px solid var(--border);
+	padding: 1em;
+	overflow: auto;
+}
+
+/* Alerts / Info Boxes */
+.note, .warn, .ok, .info-box {
+	margin: 15px 0;
+	padding: 10px 15px;
+	border: 1px solid var(--border);
+	background-color: #f8f9fa;
+}
+
+.note, .info-box {
+	border-left: 10px solid #36c; /* Wikipedia blue style */
+}
+
+.warn {
+	border-left: 10px solid #d33;
+}
+
+.ok {
+	border-left: 10px solid #14866d;
+}
+
+/* Checklist */
+.checklist {
+	list-style: none;
+	padding-left: 10px;
+}
+
+.checklist li {
+	margin-bottom: 5px;
+}
+
+.checklist li::before {
+	content: "•";
+	margin-right: 10px;
+	color: var(--arch-blue);
+}
+
+/* Tables */
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 15px 0;
+}
+
+th, td {
+	border: 1px solid var(--border);
+	padding: 8px 12px;
+	text-align: left;
+}
+
+th {
+	background-color: #eaecf0;
+	font-weight: bold;
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+	.grid {
+		grid-template-columns: 1fr;
+	}
+
+	.nav {
+		margin-bottom: 15px;
+		background: #f8f9fa;
+		border: 1px solid var(--border);
+		padding: 10px;
+	}
+
+	.nav-toggle {
+		display: block;
+		background: none;
+		border: none;
+		font-weight: bold;
+		cursor: pointer;
+		width: 100%;
+		text-align: left;
+		padding: 5px;
+	}
+
+	.nav-links {
+		display: none;
+	}
+
+	.nav-links.open {
+		display: flex;
+	}
+
+	.card {
+		padding: 20px;
+	}
+}
+
+.nav-toggle {
+	display: none;
+}

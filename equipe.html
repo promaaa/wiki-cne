@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Équipe — Gestion</title><link rel="stylesheet" href="style.css"></head>
+<body><header class="header"><a href="index.html"><img src="logo.png" alt="CNE"><span>Wiki CNE — Documentation Client</span></a></header><main class="wrap"><div class="grid"><nav class="nav"><button class="nav-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">Navigation</button><div class="nav-links"><a href="index.html">Index</a><a href="accueil.html">Accueil</a><a href="vue-ensemble.html">Vue d'ensemble</a><a href="prestations.html">Prestations</a><a href="pole.html">Pôles</a><a href="cpt.html">CPT</a><a class="active" href="equipe.html">Équipe</a><a href="articles.html">Articles (Substack)</a><a href="simulateur.html">Simulateur & RDV</a><a href="slack.html">Slack</a><a href="google-agenda.html">Google Agenda</a><a href="linkedin.html">LinkedIn</a><a href="shortcodes.html">Shortcodes</a><a href="migration-ovh.html">Migration OVH</a></div></nav><section class="card">
+<h1>Gestion de la page Équipe</h1>
+<p>Les membres sont administrés dans le CPT <code>Équipe</code>.</p>
+
+<h2>Champs à compléter pour chaque membre</h2>
+<ul>
+	<li>Nom (titre de la fiche)</li>
+	<li>Rôle / description courte (extrait)</li>
+	<li>Photo de profil (image mise en avant)</li>
+	<li>Lien LinkedIn (meta <code>cne_linkedin_url</code>)</li>
+	<li>Pôle (Digital, Environnemental, Ingénierie)</li>
+</ul>
+
+<h2>Ordre d'affichage</h2>
+<p>Le rendu utilise l'ordre WordPress (<code>menu_order</code> puis publication). Utiliser l'ordre natif ou un plugin d'ordering si besoin de classement précis.</p>
+
+<h2>Checklist qualité</h2>
+<ul class="checklist">
+	<li>Toutes les photos ont un cadrage homogène.</li>
+	<li>Tous les profils LinkedIn sont valides.</li>
+	<li>Les rôles sont à jour et cohérents avec la communication CNE.</li>
+</ul>
+
+<h2>Photo de groupe du mandat</h2>
+<p>La photo de groupe (photo du mandat) qui apparaît en en-tête de la page Équipe et sur la page d'accueil peut être modifiée directement depuis WordPress.</p>
+
+<h3>Comment modifier la photo</h3>
+<ol>
+	<li>Connectez-vous à l'administration WordPress (<code>/wp-admin</code>)</li>
+	<li>Allez dans <strong>Apparence → Personnaliser</strong></li>
+	<li>Cliquez sur la section <strong>"CNE - Équipe"</strong></li>
+	<li>Cliquez sur <strong>"Photo de groupe de l'équipe"</strong></li>
+	<li>Vous pouvez :
+		<ul>
+			<li><strong>Téléverser</strong> une nouvelle image depuis votre ordinateur</li>
+			<li><strong>Sélectionner</strong> une image déjà présente dans la bibliothèque médias</li>
+		</ul>
+	</li>
+	<li>Cliquez sur <strong>"Publier"</strong> pour enregistrer</li>
+</ol>
+
+<h3>Résultat</h3>
+<p>La nouvelle image sera automatiquement affichée sur :</p>
+<ul>
+	<li>La page d'accueil (section héro)</li>
+	<li>La page Équipe (<code>/equipe-centrale-nantes-etudes/</code>)</li>
+</ul>
+
+<h3>Recommandations</h3>
+<ul>
+	<li>Format recommandé : <strong>JPG</strong> ou <strong>PNG</strong></li>
+	<li>Dimensions minimales : <strong>1200px de largeur</strong></li>
+	<li>Ratio recommandé : <strong>16:9</strong> ou <strong>4:3</strong></li>
+	<li>L'image sera recadrée automatiquement pour s'adapter à l'affichage</li>
+</ul>
+</section></div></main></body></html>

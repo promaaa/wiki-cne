@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Simulateur &amp; RDV — Paramétrage</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<header class="header"><a href="index.html"><img src="logo.png" alt="CNE"><span>Wiki CNE — Documentation
+				Client</span></a></header>
+	<main class="wrap">
+		<div class="grid">
+			<nav class="nav"><button class="nav-toggle"
+					onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">Navigation</button>
+				<div class="nav-links">
+					<a href="index.html">Index</a><a href="accueil.html">Accueil</a><a href="vue-ensemble.html">Vue
+						d'ensemble</a><a href="prestations.html">Prestations</a><a href="pole.html">Pôles</a><a
+						href="cpt.html">CPT</a><a href="equipe.html">Équipe</a><a href="articles.html">Articles
+						(Substack)</a><a class="active" href="simulateur.html">Simulateur &amp; RDV</a><a
+						href="slack.html">Slack</a><a href="google-agenda.html">Google Agenda</a><a
+						href="linkedin.html">LinkedIn</a><a href="shortcodes.html">Shortcodes</a><a href="migration-ovh.html">Migration OVH</a>
+				</div>
+			</nav>
+
+			<section class="card">
+				<h1>Simulateur de projet et prise de rendez-vous</h1>
+				<p>Le module contact combine deux briques: qualification projet (simulateur) + réservation de
+					demi-journée (RDV).</p>
+
+				<h2>État actuel du module RDV (livré)</h2>
+				<ul class="checklist">
+					<li>Interface simplifiée en 3 temps: date → créneau → informations contact.</li>
+					<li>Créneaux <code>Matin</code>, <code>Midi</code>, <code>Après-midi</code> et <code>Soir</code>
+						(pas de choix d'heure précise).</li>
+					<li>Synchronisation des disponibilités avec Google Calendar (créneaux occupés bloqués).</li>
+					<li>Affichage automatique de la semaine suivante le week-end (samedi/dimanche).</li>
+					<li>Envoi systématique d'une invitation par email avec fichier <code>.ics</code>, pour garantir la
+						bonne réception même sans <i>Domain-Wide Delegation</i> Google Workspace.</li>
+				</ul>
+
+				<h2>Notifications Slack</h2>
+				<p>Chaque soumission de formulaire (simulateur ou RDV) déclenche automatiquement une notification Slack
+					dans le canal configuré, en plus de l'email classique. Cela permet à l'équipe de réagir en temps
+					réel aux appels d'offres.</p>
+				<div class="ok"><strong>Configuration :</strong> voir la page <a href="slack.html">Slack</a> pour les
+					étapes de mise en place du webhook.</div>
+
+				<h2>Champs gérés côté front</h2>
+				<table>
+					<tr>
+						<th>Bloc</th>
+						<th>Champs</th>
+					</tr>
+					<tr>
+						<td>Simulateur</td>
+						<td>Nom, email, entreprise, type de projet, budget, délai.</td>
+					</tr>
+					<tr>
+						<td>RDV</td>
+						<td>Nom, email, téléphone, date, créneau
+							(<code>matin</code>/<code>midi</code>/<code>apres-midi</code>/<code>soir</code>), objet
+							(optionnel).</td>
+					</tr>
+				</table>
+
+				<h2>Ce que le client doit configurer</h2>
+				<ul class="checklist">
+					<li>Email administrateur WordPress valide (réception des demandes).</li>
+					<li>Webhook Slack (optionnel mais recommandé) pour notification temps réel — voir <a
+							href="slack.html">Slack</a>.</li>
+					<li>Google Agenda (optionnel mais recommandé) pour réservation automatique.</li>
+					<li>SMTP transactionnel recommandé pour fiabiliser les emails.</li>
+				</ul>
+
+
+
+				<div class="warn"><strong>Important :</strong> sans configuration email (SMTP/DNS), les formulaires
+					peuvent sembler fonctionner visuellement mais les notifications peuvent ne jamais arriver.</div>
+			</section>
+		</div>
+	</main>
+</body>
+
+</html>

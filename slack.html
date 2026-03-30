@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Notifications Slack — Configuration</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<header class="header"><a href="index.html"><img src="logo.png" alt="CNE"><span>Wiki CNE — Documentation Client</span></a></header>
+	<main class="wrap">
+		<div class="grid">
+			<nav class="nav"><button class="nav-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">Navigation</button><div class="nav-links">
+				<a href="index.html">Index</a><a href="accueil.html">Accueil</a><a href="vue-ensemble.html">Vue
+					d'ensemble</a><a href="prestations.html">Prestations</a><a href="pole.html">Pôles</a><a
+					href="cpt.html">CPT</a><a href="equipe.html">Équipe</a><a href="articles.html">Articles (Substack)</a><a href="simulateur.html">Simulateur &amp;
+					RDV</a><a class="active" href="slack.html">Slack</a><a href="google-agenda.html">Google Agenda</a><a
+					href="linkedin.html">LinkedIn</a><a href="shortcodes.html">Shortcodes</a><a href="migration-ovh.html">Migration OVH</a>
+			</div></nav>
+
+			<section class="card">
+				<h1>Connecter votre Slack au site</h1>
+				<p>Votre site internet peut vous prévenir <strong>directement sur Slack</strong> dès qu'un client vous
+					contacte, demande un devis ou prend rendez-vous ! C'est un excellent moyen de réagir très vite sans
+					avoir à surveiller votre boîte mail.</p>
+
+				<div class="note"><strong>Pas d'inquiétude :</strong> Si vous ne configurez pas Slack (ou si Slack
+					tombe en panne), le site continuera de vous envoyer des e-mails normalement sans afficher la moindre
+					erreur aux clients.</div>
+
+				<h2>1. Que devez-vous nous fournir ?</h2>
+				<p>Pour que le site puisse "parler" à votre Slack, il a besoin d'une autorisation sous la forme d'un
+					lien spécial, appelé <strong>URL Webhook</strong>. Ce lien ressemble à ceci :<br>
+					<code>https://hooks.slack.com/services/T0000/B0000/XXXXXX</code>
+				</p>
+				<p>Si vous avez déjà ce lien, passez directement à l'étape 3.</p>
+
+				<h2>2. Comment obtenir ce lien (pour les administrateurs Slack)</h2>
+				<ol class="checklist">
+					<li>Connectez-vous à <a href="https://api.slack.com/apps" target="_blank">api.slack.com/apps</a>
+						avec votre compte.</li>
+					<li>Cliquez sur le bouton vert <strong>Create New App</strong> puis <strong>From scratch</strong>.
+					</li>
+					<li>Donnez-lui un nom (ex: "Site Internet CNE") et choisissez votre espace de travail Slack.</li>
+					<li>Dans le menu de l'application, cherchez <strong>Incoming Webhooks</strong> et activez l'option
+						("On").</li>
+					<li>Descendez en bas de page et cliquez sur <strong>Add New Webhook to Workspace</strong>.</li>
+					<li>Choisissez le canal (ex: <code>#appels-doffres</code>) où le site déposera les alertes.</li>
+					<li><strong>Copiez le lien Webhook URL généré.</strong></li>
+				</ol>
+
+				<h2>3. Où coller ce lien sur votre site ?</h2>
+				<p>Une fois le lien en votre possession :</p>
+				<ol class="checklist">
+					<li>Connectez-vous à l'administration de votre site WordPress.</li>
+					<li>Dans le menu de gauche, allez dans <strong>Réglages → CNE Slack</strong>.</li>
+					<li>Collez votre lien dans la case prévue à cet effet et cliquez sur <strong>Enregistrer</strong>.
+					</li>
+				</ol>
+
+				<h2>4. Faîtes un test !</h2>
+				<p>Sur la même page (Réglages → CNE Slack), vous trouverez un bouton <strong>Envoyer un test</strong>.
+					Cliquez dessus et vérifiez votre Slack : un message de bienvenue devrait apparaître instantanément !
+				</p>
+
+				<div class="warn"><strong>Sécurité :</strong> Votre lien Webhook est comme un mot de passe. Ne le
+					partagez jamais publiquement, sinon n'importe qui pourrait envoyer des messages dans votre Slack.
+				</div>
+			</section>
+		</div>
+	</main>
+</body>
+
+</html>

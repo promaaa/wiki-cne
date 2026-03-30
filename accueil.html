@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Accueil — Configuration générale</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<header class="header"><a href="index.html"><img src="logo.png" alt="CNE"><span>Wiki CNE — Documentation Client</span></a></header>
+	<main class="wrap">
+		<div class="grid">
+			<nav class="nav"><button class="nav-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">Navigation</button><div class="nav-links">
+				<a href="index.html">Index</a><a class="active" href="accueil.html">Accueil</a><a
+					href="vue-ensemble.html">Vue d'ensemble</a><a href="prestations.html">Prestations</a><a
+					href="pole.html">Pôles</a><a href="cpt.html">CPT</a><a href="equipe.html">Équipe</a><a href="articles.html">Articles (Substack)</a><a
+					href="simulateur.html">Simulateur & RDV</a><a href="slack.html">Slack</a><a
+					href="google-agenda.html">Google Agenda</a><a href="linkedin.html">LinkedIn</a><a
+					href="shortcodes.html">Shortcodes</a><a
+					href="migration-ovh.html">Migration OVH</a>
+			</div></nav>
+
+			<section class="card">
+				<h1>Configuration générale du site</h1>
+				<p>Cette page décrit les réglages WordPress à faire en premier lors de la prise en main client.</p>
+
+				<h2>1) Réglages WordPress de base</h2>
+				<table>
+					<tr>
+						<th>Menu admin</th>
+						<th>Action attendue</th>
+					</tr>
+					<tr>
+						<td><code>Réglages → Général</code></td>
+						<td>Vérifier nom du site, email administrateur, fuseau horaire <code>Europe/Paris</code>.</td>
+					</tr>
+					<tr>
+						<td><code>Réglages → Permaliens</code></td>
+						<td>Utiliser « Nom de l'article » pour URLs lisibles.</td>
+					</tr>
+					<tr>
+						<td><code>Réglages → Lecture</code></td>
+						<td>Définir la page d'accueil et la page des actualités.</td>
+					</tr>
+				</table>
+
+				<h2>2) Personnalisation CNE (contact + social)</h2>
+				<p>Le thème expose une section dédiée dans le customizer :</p>
+				<ul>
+					<li><code>Apparence → Personnaliser → CNE – Réseaux sociaux & Contact</code></li>
+					<li>Champs à renseigner : URL LinkedIn globale, email de contact, téléphone, adresse.</li>
+				</ul>
+
+				<div class="note">Ces champs alimentent le footer et certains modules de contact. Mettre des
+					informations institutionnelles validées.</div>
+
+				<h2>3) Menus et navigation</h2>
+				<ul class="checklist">
+					<li>Vérifier le menu principal : Prestations, Études, Équipe, Actualités, Contact.</li>
+					<li>Vérifier les liens footer (navigation + expertises + contact).</li>
+					<li>Tester la navigation mobile (menu burger).</li>
+				</ul>
+
+				<h2>4) Pages à publier impérativement</h2>
+				<ul>
+					<li>Accueil</li>
+					<li>Prestations (et sous-pages Digital / Environnemental / Ingénierie)</li>
+					<li>Nos études</li>
+					<li>Notre équipe</li>
+					<li>Contact</li>
+					<li>Actualités</li>
+				</ul>
+
+				<div class="warn"><strong>Attention :</strong> ne pas supprimer les modèles de pages custom du thème,
+					sinon la mise en page premium ne sera plus appliquée.</div>
+			</section>
+		</div>
+	</main>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>LinkedIn — Configuration des liens sociaux</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<header class="header"><a href="index.html"><img src="logo.png" alt="CNE"><span>Wiki CNE — Documentation Client</span></a></header>
+	<main class="wrap">
+		<div class="grid">
+			<nav class="nav"><button class="nav-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">Navigation</button><div class="nav-links">
+				<a href="index.html">Index</a>
+				<a href="accueil.html">Accueil</a>
+				<a href="vue-ensemble.html">Vue d'ensemble</a>
+				<a href="prestations.html">Prestations</a>
+				<a href="pole.html">Pôles</a>
+				<a href="cpt.html">CPT</a>
+				<a href="equipe.html">Équipe</a>
+				<a href="articles.html">Articles (Substack)</a>
+				<a href="simulateur.html">Simulateur & RDV</a>
+				<a href="slack.html">Slack</a>
+				<a href="google-agenda.html">Google Agenda</a>
+				<a class="active" href="linkedin.html">LinkedIn</a>
+				<a href="shortcodes.html">Shortcodes</a>
+				<a href="migration-ovh.html">Migration OVH</a>
+			</div></nav>
+
+			<section class="card">
+				<h1>Configuration LinkedIn</h1>
+				<p>Le site intègre LinkedIn à plusieurs niveaux pour renforcer la présence sociale de CNE. <strong>Note : le service Juicer n'est plus utilisé.</strong></p>
+
+				<h2>1) Lien LinkedIn global (Footer & Contact)</h2>
+				<p>Pour mettre à jour le lien vers la page entreprise officielle de CNE :</p>
+				<ol>
+					<li>Connectez-vous à l'administration WordPress.</li>
+					<li>Allez dans <strong>Apparence</strong> → <strong>Personnaliser</strong>.</li>
+					<li>Cliquez sur la section <strong>CNE – Réseaux sociaux & Contact</strong>.</li>
+					<li>Remplissez ou modifiez le champ <strong>URL LinkedIn</strong>.</li>
+					<li>Cliquez sur <strong>Publier</strong> pour enregistrer les changements.</li>
+				</ol>
+
+				<h2>2) Liens LinkedIn individuels (Équipe)</h2>
+				<p>Chaque membre de l'équipe peut avoir son propre lien LinkedIn affiché sur sa photo :</p>
+				<ol>
+					<li>Allez dans le menu <strong>Équipe</strong> dans la barre latérale de WordPress.</li>
+					<li>Modifiez le profil du membre souhaité.</li>
+					<li>Dans la section des champs personnalisés CNE, renseignez le champ <strong>URL LinkedIn</strong>.</li>
+					<li>Cliquez sur <strong>Mettre à jour</strong>.</li>
+				</ol>
+
+				<div class="note"><strong>Conseil :</strong> Assurez-vous que les URLs commencent bien par <code>https://www.linkedin.com/</code> pour éviter les liens cassés.</div>
+
+				<h2>3) Shortcode Flux LinkedIn</h2>
+				<p>Le lien vers la page LinkedIn est également utilisé par le shortcode <code>[cne_linkedin_feed]</code> pour diriger les utilisateurs vers votre page entreprise.</p>
+
+				<h2>Validation attendue</h2>
+				<ol>
+					<li>L'icône LinkedIn du footer pointe vers la bonne page entreprise.</li>
+					<li>Les icônes sur les photos des membres de l'équipe ouvrent bien leurs profils respectifs.</li>
+				</ol>
+
+			</section>
+		</div>
+	</main>
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Emails — Configuration</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<header class="header"><a href="index.html"><img src="logo.png" alt="CNE"><span>Wiki CNE — Documentation Client</span></a></header>
+	<main class="wrap">
+		<div class="grid">
+			<nav class="nav"><button class="nav-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">Navigation</button><div class="nav-links">
+				<a href="index.html">Index</a><a href="accueil.html">Accueil</a><a href="vue-ensemble.html">Vue
+					d'ensemble</a><a href="prestations.html">Prestations</a><a href="pole.html">Pôles</a><a
+					href="cpt.html">CPT</a><a href="equipe.html">Équipe</a><a href="articles.html">Articles (Substack)</a><a href="simulateur.html">Simulateur &amp;
+					RDV</a><a href="slack.html">Slack</a><a href="google-agenda.html">Google Agenda</a><a
+					href="linkedin.html">LinkedIn</a><a href="shortcodes.html">Shortcodes</a><a class="active" href="email.html">Emails</a><a
+					href="migration-ovh.html">Migration OVH</a>
+			</div></nav>
+
+			<section class="card">
+				<h1>Configuration des Emails</h1>
+				<p>Le site CNE envoie automatiquement des emails de confirmation aux clients lors d'une demande de devis ou d'une prise de rendez-vous. Pour que ces emails fonctionnent correctement, une configuration SMTP est nécessaire.</p>
+
+				<div class="warning">
+					<strong>Important :</strong> Par défaut, WordPress utilise la fonction PHP <code>mail()</code> qui ne fonctionne généralement pas sur les hébergements (elle est souvent désactivée pour éviter le spam). Vous <strong>devez</strong> installer un plugin SMTP pour recevoir les emails.
+				</div>
+
+				<h2>Emails envoyés automatiquement</h2>
+				<ul>
+					<li><strong>Demande de devis (simulateur)</strong> : Email de confirmation envoyé au client avec le résumé de sa demande</li>
+					<li><strong>Prise de rendez-vous</strong> : Email de confirmation avec invitation calendrier (.ics)</li>
+					<li><strong>Notification admin</strong> : Email envoyé à l'administrateur pour chaque nouvelle demande</li>
+				</ul>
+
+				<h2>Solution recommandée : Installer WP Mail SMTP</h2>
+				
+				<h3>1. Installer le plugin</h3>
+				<ol>
+					<li>Aller dans <code>Extensions → Ajouter</code></li>
+					<li>Rechercher <strong>"WP Mail SMTP"</strong></li>
+					<li>Installer et activer le plugin gratuit</li>
+				</ol>
+
+				<h3>2. Configurer le plugin</h3>
+				<ol>
+					<li>Aller dans <code>WP Mail SMTP → Réglages</code></li>
+					<li>Choisir un service mail parmi :
+						<ul>
+							<li><strong>Gmail / Google Workspace</strong> - Connexion OAuth (recommandé)</li>
+							<li><strong>SendGrid</strong> - API ou SMTP</li>
+							<li><strong>Mailgun</strong> - API</li>
+							<li><strong>SMTP.com</strong> - SMTP simple</li>
+							<li><strong>Autre SMTP</strong> - Configuration manuelle (serveur, port, identifiants)</li>
+						</ul>
+					</li>
+					<li>Suivre l'assistant de configuration du plugin</li>
+					<li>Activer l'option <strong>"Email deliverability"</strong> pour fiables</li>
+				</ol>
+
+				<h3>3. Tester l'envoi</h3>
+				<ol>
+					<li>Aller dans <code>WP Mail SMTP → Tests d'email</code></li>
+					<li>Entrer une adresse email valide</li>
+					<li>Cliquer sur "Envoyer un email de test"</li>
+					<li>Vérifier la boîte de réception (et les spams)</li>
+				</ol>
+
+				<h2>Configuration avec Gmail / Google Workspace</h2>
+				<p>Méthode recommandée pour CNE (compte Gmail ou Google Workspace classique) :</p>
+				<ol>
+					<li>Dans WP Mail SMTP, sélectionner <strong>"Google / Gmail"</strong></li>
+					<li>Cliquer sur "CONNEXION AVEC GOOGLE"</li>
+					<li>Autoriser l'application à envoyer des emails</li>
+					<li>Configurer l'expéditeur : <code>noreply@ VOTRE-DOMAINE.com</code></li>
+				</ol>
+
+				<div class="ok">
+					<strong>Bon à savoir :</strong> Si vous utilisez un nom de domaine personnalisé (ex: cne-nantes.fr), il est recommandé d'utiliser le même domaine pour l'adresse email d'expéditeur pour éviter que les emails soient marqués comme spam.
+				</div>
+
+				<h2>Dépannage</h2>
+				<table>
+					<tr>
+						<th>Problème</th>
+						<th>Solution</th>
+					</tr>
+					<tr>
+						<td>Emails non reçus</td>
+						<td>Vérifier les spams, tester avec WP Mail SMTP, vérifier les logs</td>
+					</tr>
+					<tr>
+						<td>Erreur d'authentification Google</td>
+						<td>Regénérer le Client ID OAuth dans Google Cloud Console</td>
+					</tr>
+					<tr>
+						<td>Emails goes to spam</td>
+						<td>Utiliser un domaine d'expéditeur cohérent (ex: @cne-nantes.fr)</td>
+					</tr>
+				</table>
+
+			</section>
+		</div>
+	</main>
+</body>
+
+</html>

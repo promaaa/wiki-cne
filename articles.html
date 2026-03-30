@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Articles — Wiki CNE</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<header class="header"><a href="index.html"><img src="logo.png" alt="CNE"><span>Wiki CNE — Documentation Client</span></a></header>
+	<main class="wrap">
+		<div class="grid">
+			<nav class="nav"><button class="nav-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">Navigation</button><div class="nav-links">
+				<a href="index.html">Index</a>
+				<a href="accueil.html">Accueil</a>
+				<a href="vue-ensemble.html">Vue d'ensemble</a>
+				<a href="prestations.html">Prestations</a>
+				<a href="pole.html">Pôles</a>
+				<a href="cpt.html">CPT</a>
+				<a href="equipe.html">Équipe</a>
+				<a class="active" href="articles.html">Articles</a>
+				<a href="simulateur.html">Simulateur & RDV</a>
+				<a href="slack.html">Slack</a>
+				<a href="google-agenda.html">Google Agenda</a>
+				<a href="linkedin.html">LinkedIn</a>
+				<a href="shortcodes.html">Shortcodes</a>
+				<a href="email.html">Emails</a>
+				<a href="livraison-client.html">Livraison Client</a>
+				<a href="migration-ovh.html">Migration OVH</a>
+			</div></nav>
+
+			<section class="card">
+				<h1>Gestion des Articles</h1>
+				<p>Le site permet de publier des articles d'actualité pour informer vos clients et mettre en avant l'expertise de CNE.</p>
+
+				<h2>1) Rédiger un article</h2>
+				<p>Pour publier ou modifier un article (Post) :</p>
+				<ol>
+					<li>Allez dans le menu <strong>Articles</strong> de WordPress.</li>
+					<li>Cliquez sur <strong>Ajouter</strong>.</li>
+					<li>Utilisez l'éditeur (Gutenberg) pour ajouter du texte, des titres et des images.</li>
+					<li>Cliquez sur <strong>Publier</strong>.</li>
+				</ol>
+
+				<h2>2) Éléments importants</h2>
+				<ul class="checklist">
+					<li><strong>Image à la une :</strong> Elle apparaît dans la liste des actualités et en haut de l'article.</li>
+					<li><strong>Estimation du temps de lecture :</strong> Toujours calculée automatiquement pour donner un repère au lecteur.</li>
+					<li><strong>Méta-données SEO :</strong> N'oubliez pas de remplir la méta-description en bas de l'éditeur pour améliorer le référencement.</li>
+				</ul>
+
+				<h2>3) Bonnes pratiques éditoriales</h2>
+				<ul>
+					<li>Utilisez des titres de niveau 2 (H2) et 3 (H3) pour structurer votre contenu.</li>
+					<li>Ajoutez des liens vers vos pages de prestations ou d'études de cas.</li>
+					<li>Optimisez vos images (WebP recommandé) avant le téléversement.</li>
+				</ul>
+
+				<div class="warn"><strong>Attention :</strong> Les articles doivent être assignés à des catégories pertinentes pour apparaître correctement dans les filtres de la page actualités.</div>
+			</section>
+		</div>
+	</main>
+</body>
+
+</html>
